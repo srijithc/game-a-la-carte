@@ -1,0 +1,49 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 30
+  timeout: 10000
+  reaping_frequency: 300
+  port: 3306
+  reconnect: true
+  variables:
+    sql_mode: NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+
+development: &development
+  <<: *default
+  database: game_a_la_carte_dev
+  username:
+  password:
+  host: localhost
+
+stage: &stage
+  <<: *default
+  database: game_a_la_carte_stage
+  username:
+  password:
+  host:
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test: &test
+  <<: *default
+  database: game_a_la_carte_dev
+  username:
+  password:
+  host: localhost
+
+production: &production
+  <<: *default
+  database: game_a_la_carte
+  username:
+  password:
+  host:
