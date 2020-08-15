@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Gameopedia</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Game A-La-carte</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+</head>
+
+<body>
+<% if notice.present? %>
+  <div class="alert alert-success"><%= notice %></div>
+<% end %>
+<% if alert.present? %>
+  <div class="alert alert-warning"><%= alert %></div>
+<% end %>
+<!--<div class="row">-->
+  <%= yield %>
+<!--</div>-->
+
+</body>
 </html>
