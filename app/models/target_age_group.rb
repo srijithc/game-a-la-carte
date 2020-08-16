@@ -1,0 +1,2 @@
+class TargetAgeGroup < ApplicationRecord
+end

@@ -8,6 +8,7 @@ Things you may want to cover:
 * Ruby version: 2.7.1 
 * System dependencies
     * Make sure Mysql is installed https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html
+    * Install ImageMagick https://www.imagemagick.org/
     * Run bundle update
 * Configuration
 
