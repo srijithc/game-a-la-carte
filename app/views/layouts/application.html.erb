@@ -16,6 +16,9 @@
 <% if alert.present? %>
   <div class="alert alert-warning"><%= alert %></div>
 <% end %>
+<div>
+  <%= render partial: "dashboard/nav_bars" %>
+</div>
 <!--<div class="row">-->
   <%= yield %>
 <!--</div>-->
