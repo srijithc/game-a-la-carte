@@ -7,7 +7,5 @@ class DashboardController < ApplicationController
     else
       @mycart_items = QuoteItem.none
     end
-
-    # @quote = current_user.quotes.find_or_initialize_by(confirmed_at: nil).last
   end
 end

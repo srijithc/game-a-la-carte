@@ -1,0 +1,28 @@
+<h3> Please select games </h3>
+<%= form_for(@quote) do |f| %>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Game</th>
+    <th scope="col">Picture</th>
+    <th scope="col">Price</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @games.each do |game| %>
+    <tr>
+      <th scope="row"> <%= check_box_tag :game_id, game.id, false, {name: "game_ids[]"} %></th>
+      <td><%= game.name %></td>
+      <td><%= image_tag url_for game.game_picture.variant(resize_to_limit: [100, 100]) %></td>
+      <td> <%= number_to_currency game.price %></td>
+    </tr>
+
+  <% end %>
+  </tbody>
+
+</table>
+
+  <%= f.submit "Add To Cart", class: "btn btn-lg btn-primary" %>
+<% end %>
