@@ -4,7 +4,6 @@ RSpec.describe QuotesController, :type => :controller do
   describe "POST #create" do
     before(:each) do
       @user = User.new(email: 'test@test.com', password: "password") ## uncomment if not using FactoryBot
-      @user.confirm
       @user.build_personal_information
       @user.personal_information.name = "Test User"
       @user.personal_information.age = 18
@@ -16,10 +15,6 @@ RSpec.describe QuotesController, :type => :controller do
 
     it "Cart should be having minimum 1 game" do
       post :create
-      # expect(response.content_type).to eq "text/html"
-      # expect(assigns(:teams)).to eq([:team])
-      # expect(response).to have_http_status(:ok)
-      # expect(response.body).to include("The page you were looking for doesn't exist.")
       expect(flash[:alert]).to eq("Please select atleast one game")
     end
 

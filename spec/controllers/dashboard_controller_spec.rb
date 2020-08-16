@@ -20,8 +20,6 @@ RSpec.describe DashboardController, :type => :controller do
 
       get :index
       expect(response).to render_template("index")
-      # expect(response).to include("Welcome back! #{@user.get_name}")
-      # response.should redirect_to dashboard_index_path
     end
   end
 end
