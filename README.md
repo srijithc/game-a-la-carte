@@ -10,15 +10,15 @@ Things you may want to cover:
 * System dependencies
     * Make sure Mysql is installed https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html
     * Install ImageMagick https://www.imagemagick.org/
-    * Run bundle update
+    * Run bundle install
 * Configuration
-
+* Database initialization
+    * please set the db credentials in config/database.yml
 * Database creation
     * Run rake db:create
     * Run rails db:migrate
     * Run rails db:seed  
-* Database initialization
-    * please set the db credentials in config/database.yml
+
 * How to run the test suite
     * rspec spec
 * Services (job queues, cache servers, search engines, etc.)
