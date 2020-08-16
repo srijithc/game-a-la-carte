@@ -25,12 +25,16 @@ class QuotesController < ApplicationController
   #
   # buy
   # Takes care of final checkout
-  # 
+  #
   def buy
     @quote = current_user.quotes.unconfirmed.last
-    @quote.confirm!
+    if @quote.present?
+      @quote.confirm!
+      flash[:notice] = "Purchase completed successfully"
+    else
+      flash[:alert] = "Cart is empty"
+    end
 
-    flash[:notice] = "Purchase completed successfully"
     redirect_to dashboard_index_path
   end
 end
