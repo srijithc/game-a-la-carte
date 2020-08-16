@@ -1,3 +1,5 @@
+p "Loading Games"
+
 require 'open-uri'
 
 games = [["Gran Turismo Sport", "https://i.imgur.com/fpVLFsO.jpg", "3 years and older", "Mystery", "Racing", "Low", 10],

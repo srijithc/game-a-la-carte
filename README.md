@@ -18,7 +18,8 @@ Things you may want to cover:
     * Run rake db:create
     * Run rails db:migrate
     * Run rails db:seed  
-
+* Start the server
+    * rails s
 * How to run the test suite
     * rspec spec
 * Services (job queues, cache servers, search engines, etc.)

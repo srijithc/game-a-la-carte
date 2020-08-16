@@ -1,3 +1,5 @@
+p "Loading Users"
+
 users = [["Adrian", "adrian@gmail.com", 15],
          ["Vladimir", "vladimir@gmail.com", 43],
          ["Naveen", "naveen@gmail.com", 5],

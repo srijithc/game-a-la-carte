@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 2020_08_16_111104) do
     t.string "theme"
     t.string "genre"
     t.string "violence"
+    t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.float "price"
   end
 
   create_table "personal_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,11 +54,11 @@ ActiveRecord::Schema.define(version: 2020_08_16_111104) do
 
   create_table "quote_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "quote_id"
+    t.integer "game_id"
     t.integer "quantity"
     t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "game_id"
   end
 
   create_table "quotes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

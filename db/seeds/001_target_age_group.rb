@@ -1,3 +1,4 @@
+p "Loading TargetGroups"
 target_age_group = TargetAgeGroup.find_or_initialize_by(title: "3 years and older")
 target_age_group.update_attributes(age: 3)
 

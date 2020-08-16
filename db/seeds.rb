@@ -15,3 +15,11 @@ if ENV["load_only"].present? then
   load seed_file
   exit
 end
+
+Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each { |seed_file|
+
+  file_name = seed_file.split('/').last
+
+  load seed_file
+
+}
