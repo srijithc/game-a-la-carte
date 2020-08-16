@@ -48,10 +48,6 @@ body {
   z-index: 2;
 }
 
-.m-b-10{
-    margin-bottom: 10px;
-}
-
-.m-b-2{
-    margin-bottom: 2px;
+.sign_out{
+    float: right;
 }
