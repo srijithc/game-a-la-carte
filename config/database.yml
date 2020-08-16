@@ -20,8 +20,8 @@ default: &default
 development: &development
   <<: *default
   database: game_a_la_carte_dev
-  username: root
-  password: root_123
+  username:
+  password:
   host: localhost
 
 stage: &stage
