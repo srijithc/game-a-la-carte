@@ -20,8 +20,8 @@ default: &default
 development: &development
   <<: *default
   database: game_a_la_carte_dev
-  username:
-  password:
+  username: root
+  password: root_123
   host: localhost
 
 stage: &stage
@@ -36,9 +36,9 @@ stage: &stage
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
-  database: game_a_la_carte_dev
-  username:
-  password:
+  database: game_a_la_carte_test
+  username: root
+  password: root_123
   host: localhost
 
 production: &production

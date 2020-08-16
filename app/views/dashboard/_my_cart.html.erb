@@ -1,0 +1,28 @@
+<h3> My Cart</h3>
+<div class="row">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col"> Game </th>
+      <th scope="col"> Quantity </th>
+      <th scope="col"> Price </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @mycart_items.each do |quote_item| %>
+      <tr>
+        <th scope="row"><%= quote_item.game.name %></th>
+        <td><%= quote_item.quantity %></td>
+        <td><%= number_to_currency quote_item.price %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="row">
+  <h3> Total: <%= number_to_currency @mycart_items.sum(:price) %></h3>
+</div>
+
+<%= button_to "Checkout", buy_quotes_path, {class: "btn btn-lg btn-primary"} %>

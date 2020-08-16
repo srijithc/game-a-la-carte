@@ -1,0 +1,34 @@
+
+<h3 class="heading font-weight-normal">Sign up</h3>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "input-form"}) do |f| %>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= label_tag "user[email]", "Email", class: "form-label" %>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mb-3" %>
+
+  <%= label_tag "user[password]", :password, class: "form-label" %>
+  <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+  <% end %><br />
+  <%= f.password_field :password, autocomplete: "new-password", class: "form-control mb-3" %>
+
+  <%= label_tag "user[password_confirmation]", "Password Confirmation", class: "form-label" %>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control mb-3" %>
+
+  <% @personal_information = @user.build_personal_information %>
+  <%= f.fields_for :personal_information, @personal_information do |pi| %>
+    <%= label_tag "personal_information[name]", "Name", class: "form-label" %>
+    <%= pi.text_field :name, autocomplete: "name", class: "form-control mb-3" %>
+
+    <%= label_tag "personal_information[age]", "Age", class: "form-label" %>
+    <%= pi.text_field :age, autocomplete: "age", class: "form-control mb-3" %>
+  <% end %>
+
+  <div class="actions mb-3">
+    <%= f.submit "Sign up", class: "btn btn-lg btn-primary btn-block" %>
+  </div>
+  <div>
+<%= render "devise/shared/links" %>
+  </div>
+<% end %>

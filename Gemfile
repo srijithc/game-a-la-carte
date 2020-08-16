@@ -39,12 +39,24 @@ gem 'bootstrap'
 gem "bootstrap-sass"
 gem 'jquery-rails'
 
+gem "aws-sdk-s3", require: false
+gem 'image_processing'
+# gem  "rspec-core"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+
+  gem  "rspec-core"
+  gem "rspec-expectations"
+  gem "rspec-rails"
+  gem "rspec-mocks"
+  gem "rspec-support"
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 group :development do
