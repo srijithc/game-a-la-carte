@@ -4,6 +4,7 @@ class QuotesController < ApplicationController
   # Initialize and creates the cart
   #
   def create
+    # ss
     if params[:game_ids].present?
       Quote.add_to_quote(current_user, params[:game_ids])
       flash[:notice] = "Successfully Added to the cart"

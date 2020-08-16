@@ -1,5 +1,6 @@
 class Quote < ApplicationRecord
   has_many :quote_items
+  belongs_to :user
 
   scope :unconfirmed, -> {where(confirmed_at: nil)}
 

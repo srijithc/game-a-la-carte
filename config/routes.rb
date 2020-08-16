@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get "/unauthorized", to: "devise/sessions#new"
     get "/signup", to: "registrations#new"
     delete "/signout", to: "devise/sessions#destroy"
+    get "/signout", to: "devise/sessions#destroy"
   end
 
   resources :quotes do

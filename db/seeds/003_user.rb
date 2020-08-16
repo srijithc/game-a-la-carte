@@ -11,9 +11,9 @@ users.each do |name, email, age|
   default_password = "user1234"
   user = User.find_or_initialize_by({email: email})
   user.password = default_password
-  user.confirm
+  # user.confirm
 
-  user.personal_information = user.build_personal_information if user.personal_information.blank?
+  user.build_personal_information if user.personal_information.blank?
 
   user.personal_information.name = name
   user.personal_information.age = age
