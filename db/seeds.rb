@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# Re-run a specific seed_file only
+# Eg: `rake db:seed load_only=001_target_age_group.rb`
+
+if ENV["load_only"].present? then
+  seed_file = "#{File.join(Rails.root, 'db', 'seeds', ENV["load_only"])}"
+  load seed_file
+  exit
+end
